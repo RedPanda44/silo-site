@@ -22,7 +22,7 @@ site/
 
 ## Repositories
 
-- **This site:** <https://github.com/razvanhb/Silo>
+- **This site:** <https://github.com/RedPanda44/silo-site>
 - **Application source code (build it yourself):**
   <https://github.com/Lumid-Off/AirCard-Windows>
 
