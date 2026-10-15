@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Silo">
+  <defs>
+    <linearGradient id="ac-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4c4c4f"/>
+      <stop offset="1" stop-color="#2a2a2c"/>
+    </linearGradient>
+    <linearGradient id="ac-flap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8e8e93"/>
+      <stop offset="1" stop-color="#636366"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="58" fill="url(#ac-bg)"/>
+  <path d="M74 76h108a22 22 0 0 1 22 22v14H52v-14a22 22 0 0 1 22-22z" fill="url(#ac-flap)"/>
+  <rect x="52" y="104" width="152" height="82" rx="18" fill="#ffffff"/>
+  <rect x="52" y="126" width="152" height="30" fill="#3a3a3c"/>
+</svg>
