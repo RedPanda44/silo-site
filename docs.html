@@ -183,7 +183,14 @@ cargo build --release</code></pre>
           <p>The compiled binary will be in <code>target\release</code>. Release builds use LTO, a single codegen unit and stripped symbols for a small, fast executable.</p>
 
           <h2 id="changelog">Changelog</h2>
-          <h3>1.5.1 — current</h3>
+          <h3>1.5.2 — current</h3>
+          <ul>
+            <li><strong>Built-in updater:</strong> Silo checks for new releases on launch (or from the new Updates tab) and downloads and installs them in place — no need to re-run the installer.</li>
+            <li><strong>System theme:</strong> the appearance setting now offers <em>System</em> (follows your Windows light/dark setting, updating live) alongside Light and Dark.</li>
+            <li><strong>Automatic device detection:</strong> the app refreshes the moment an iPhone connects or disconnects; the manual refresh buttons were removed.</li>
+            <li><strong>Refreshed sidebar:</strong> macOS System Settings-style navigation with colored icon chips and an accent badge on the Updates tab when a new version is available.</li>
+          </ul>
+          <h3>1.5.1</h3>
           <ul>
             <li><strong>Safer restores:</strong> <em>Restore Original</em> resolves the exact on-device card folder (padded/unpadded hash variant) before writing, so it always targets the correct card.</li>
             <li><strong>Cleaner transport shutdown:</strong> the AirTraffic sync worker cancels promptly on timeout and releases the device connection instead of leaving a stalled session.</li>
