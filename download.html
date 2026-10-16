@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Download Silo — Windows &amp; macOS · v1.5.0</title>
-<meta name="description" content="Download Silo 1.5.0 for Windows 10/11 (64-bit) and macOS. Single native executable, no runtimes, SHA-256 checksums and verified release notes.">
+<title>Download Silo — Windows &amp; macOS · v1.5.1</title>
+<meta name="description" content="Download Silo 1.5.1 for Windows 10/11 (64-bit) and macOS. Single native executable, no runtimes, SHA-256 checksums and verified release notes.">
 <meta name="theme-color" content="#0d0d0f">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Download Silo">
-<meta property="og:description" content="Silo 1.5.0 — Apple Wallet card skinner &amp; passcode themer. One 7.7 MB file, no jailbreak.">
+<meta property="og:description" content="Silo 1.5.1 — Apple Wallet card skinner &amp; passcode themer. One small file, no jailbreak.">
 <meta property="og:image" content="assets/img/icon.png">
 <link rel="icon" href="assets/img/icon.png">
 <link rel="apple-touch-icon" href="assets/img/icon.png">
@@ -61,14 +61,15 @@
         <div>
           <div class="dl-meta">
             <span class="tag tag--ok">Stable</span>
-            <span class="tag">v1.5.0</span>
+            <span class="tag">v1.5.1</span>
             <span class="tag">x86_64</span>
             <span class="tag">MIT</span>
           </div>
-          <h2>Silo 1.5.0</h2>
+          <h2>Silo 1.5.1</h2>
           <p>
-            Complete UI redesign with a Wallet-inspired interface, light &amp; dark themes, macOS-style
-            sidebar, lock-screen keypad preview, drag &amp; drop import, and a refactored UI layer.
+            A reliability update on top of the 1.5.0 redesign: restores now target the correct on-device
+            card folder, the AirTraffic sync releases its device session on timeout, and card detection
+            accepts URL-safe hashes.
           </p>
           <div class="btn-row mt-24">
             <a class="btn btn--lg" href="downloads/silo-installer.exe">
@@ -115,7 +116,7 @@
           <p class="small muted">Compare this SHA-256 hash against the file you downloaded:</p>
         </div>
         <div class="copybox">
-          <span id="sha">D35E6B3A69C8E1FD0B0516DDCE28458CF2073794728DD031EA6A671FB52EC92D</span>
+          <span id="sha">37CEF280FDB8C8E45FD4D6F2FD2174F95783C79B36EFBAB60AF47C66D15A98A7</span>
           <button type="button" data-copy data-copy-target="#sha">Copy</button>
         </div>
         <p class="small muted" style="margin-top:12px">
@@ -252,38 +253,39 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Release notes</span>
-        <h2>What's new in 1.5.0</h2>
+        <h2>What's new in 1.5.1</h2>
+        <p class="lead">A focused reliability release — no changes to your saved cards, themes or backups.</p>
       </div>
       <div class="grid grid--2">
         <article class="card reveal">
+          <div class="icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></div>
+          <h3>Restore that always lands</h3>
+          <p><strong>Restore Original</strong> now resolves the exact on-device card folder — padded or unpadded hash variant — before writing, so your original card face is always restored to the right place.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2 6 4-14 2 8h4"/></svg></div>
+          <h3>Cleaner transport shutdown</h3>
+          <p>If the AirTraffic sync hits its timeout, the worker now cancels immediately and releases the device connection instead of leaving a stalled session holding your iPhone.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+          <h3>Smarter card detection</h3>
+          <p>URL-safe base64 card hashes that contain <code>-</code> or <code>_</code> separators are no longer mistaken for system strings and rejected.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Snappier previews</h3>
+          <p>The card artwork channel is now persistent, so rapid rescans no longer drop the in-flight preview response.</p>
+        </article>
+        <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8z"/></svg></div>
-          <h3>Complete UI redesign</h3>
-          <p>A new Apple Wallet-inspired interface: soft elevated cards, capsule buttons, hairline separators, generous whitespace, hand-drawn vector icons, and smooth micro-animations on every screen.</p>
+          <h3>Everything from 1.5.0</h3>
+          <p>The full Wallet-inspired redesign, light &amp; dark themes, macOS-style sidebar, lock-screen keypad preview, drag &amp; drop import and refactored UI layer.</p>
         </article>
         <article class="card reveal">
-          <div class="icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6.4 6.4"/></svg></div>
-          <h3>Light &amp; dark themes</h3>
-          <p>Switch instantly from the sun/moon button in the top bar or in Settings. The choice is remembered on your PC.</p>
-        </article>
-        <article class="card reveal">
-          <div class="icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="18" rx="2"/><path d="M14 4h7M14 9h7M14 14h5"/></svg></div>
-          <h3>New sidebar</h3>
-          <p>macOS-style navigation with animated selection, an app badge, and a device status card docked at the bottom.</p>
-        </article>
-        <article class="card reveal">
-          <div class="icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="4"/><path d="M9 7h.01M15 7h.01M9 11.5h.01M15 11.5h.01M9 16h.01M15 16h.01"/></svg></div>
-          <h3>Lock-screen keypad preview</h3>
-          <p>The Passcode Studio now renders your theme inside a realistic dark device screen with a clock and circular key backplates.</p>
-        </article>
-        <article class="card reveal">
-          <div class="icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 20h16"/></svg></div>
-          <h3>Drag &amp; drop import</h3>
-          <p>Drop artwork (PNG/JPG/WebP) anywhere on the window to load it into the Wallet studio, or drop a <code>.passthm</code> package to open it in the Passcode studio.</p>
-        </article>
-        <article class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="17" r="3"/></svg></div>
-          <h3>Refactored UI layer</h3>
-          <p>The interface is split into focused modules — theme, icons, widgets, and one file per page — for faster future development. Version is read from a single source of truth, and Settings gained an Appearance section.</p>
+          <div class="icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v10"/><rect x="4" y="13" width="16" height="8" rx="2"/><path d="M8 17h.01"/></svg></div>
+          <h3>Unchanged compatibility</h3>
+          <p>Same requirements as 1.5.0 — Windows 10/11 64-bit, iOS 18+, Apple Mobile Device Support. Existing settings and backups carry over untouched.</p>
         </article>
       </div>
     </div>
@@ -295,24 +297,19 @@
       <div class="section-head reveal">
         <span class="eyebrow">Archive</span>
         <h2>Other versions</h2>
-        <p class="lead">Older builds remain available on GitHub. Always prefer the latest release unless you're debugging a regression.</p>
+        <p class="lead">The previous stable release is kept here for anyone debugging a regression. Always prefer the latest build.</p>
       </div>
 
       <div class="file-box reveal">
         <div class="file-row">
           <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/></svg></span>
-          <span class="meta"><b>Silo 1.5.0</b><span>Latest · stable · recommended</span></span>
+          <span class="meta"><b>Silo 1.5.1</b><span>Latest · stable · recommended</span></span>
           <span class="act"><span class="tag tag--ok">Current</span></span>
         </div>
         <div class="file-row">
           <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/></svg></span>
-          <span class="meta"><b>Silo 1.2.4</b><span>Legacy · previous stable</span></span>
-          <span class="act"><a class="btn btn--sm btn--ghost" href="https://github.com/RedPanda44/Silo/releases" rel="noopener">Get</a></span>
-        </div>
-        <div class="file-row">
-          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/></svg></span>
-          <span class="meta"><b>Nightly / pre-release</b><span>Bleeding-edge builds from CI</span></span>
-          <span class="act"><a class="btn btn--sm btn--ghost" href="https://github.com/RedPanda44/Silo/releases" rel="noopener">Browse</a></span>
+          <span class="meta"><b>Silo 1.5.0</b><span>Previous stable · portable .exe</span></span>
+          <span class="act"><a class="btn btn--sm btn--ghost" href="downloads/Silo-1.5.0-x64.exe">Get</a></span>
         </div>
       </div>
     </div>

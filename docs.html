@@ -183,7 +183,14 @@ cargo build --release</code></pre>
           <p>The compiled binary will be in <code>target\release</code>. Release builds use LTO, a single codegen unit and stripped symbols for a small, fast executable.</p>
 
           <h2 id="changelog">Changelog</h2>
-          <h3>1.5.0 — current</h3>
+          <h3>1.5.1 — current</h3>
+          <ul>
+            <li><strong>Safer restores:</strong> <em>Restore Original</em> resolves the exact on-device card folder (padded/unpadded hash variant) before writing, so it always targets the correct card.</li>
+            <li><strong>Cleaner transport shutdown:</strong> the AirTraffic sync worker cancels promptly on timeout and releases the device connection instead of leaving a stalled session.</li>
+            <li><strong>Smarter card detection:</strong> URL-safe base64 hashes containing <code>-</code>/<code>_</code> separators are no longer rejected.</li>
+            <li><strong>Snappier previews:</strong> the card artwork channel is persistent, so rapid rescans no longer drop the in-flight response.</li>
+          </ul>
+          <h3>1.5.0</h3>
           <ul>
             <li>Complete UI redesign — Apple Wallet-inspired interface with elevated cards, capsule buttons, hairline separators and micro-animations.</li>
             <li>Light &amp; dark themes, switchable from the top bar or Settings and saved locally.</li>

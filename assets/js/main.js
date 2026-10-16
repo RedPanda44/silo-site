@@ -114,6 +114,34 @@
     if (e.target.closest("[data-theme-toggle]")) toggleTheme();
   });
 
+  /* ---------- Scroll progress bar ---------- */
+  var progress = document.createElement("div");
+  progress.className = "progress-bar";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.appendChild(progress);
+
+  var updateProgress = function () {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? (window.scrollY || doc.scrollTop) / max : 0;
+    progress.style.width = Math.min(100, Math.max(0, pct * 100)) + "%";
+  };
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+
+  /* ---------- Card cursor spotlight ---------- */
+  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reducedMotion && window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+    });
+  }
+
   /* ---------- Footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

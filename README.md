@@ -15,9 +15,9 @@ site/
 │   ├── js/main.js      Theme toggle, mobile nav, scroll reveal, copy buttons, hero animation
 │   └── img/            App icon (PNG + SVG)
 └── downloads/
-    ├── silo-installer.exe       Windows installer served by download.html (12.1 MB)
+    ├── silo-installer.exe       Windows installer served by download.html (1.5.1)
     ├── Silo.dmg                 Universal macOS image served by download.html (2.5 MB)
-    └── Silo-1.5.0-x64.exe       Legacy portable build (kept for reference, nothing links to it)
+    └── Silo-1.5.0-x64.exe       Previous stable portable build (linked from the download page)
 ```
 
 ## Repositories
@@ -29,8 +29,9 @@ site/
 Both installers are served straight from this repo — no external CDN, so the buttons
 never expire:
 
-- `downloads/silo-installer.exe` — 12.1 MB, used by the two Windows buttons
+- `downloads/silo-installer.exe` — Windows installer (1.5.1), used by the two Windows buttons
 - `downloads/Silo.dmg` — 2.5 MB, used by the macOS button
+- `downloads/Silo-1.5.0-x64.exe` — previous stable portable build, linked from the archive section
 
 (An earlier revision pointed those buttons at Discord CDN attachment URLs, whose signed
 `ex=` parameters lapse after ~24 h.)
@@ -38,7 +39,7 @@ never expire:
 Published SHA-256 hashes (shown on the download page):
 
 ```text
-silo-installer.exe  D35E6B3A69C8E1FD0B0516DDCE28458CF2073794728DD031EA6A671FB52EC92D
+silo-installer.exe  37CEF280FDB8C8E45FD4D6F2FD2174F95783C79B36EFBAB60AF47C66D15A98A7
 Silo.dmg            576CF930836B68A75E5D5F963D5523E487681E64831FB82B4E18A9AC353D14C1
 ```
 
