@@ -377,7 +377,7 @@ html[data-theme="dark"] .icon-btn .sun { display: none; }
   align-items: flex-end;
 }
 .scene__pc { flex: 1 1 auto; min-width: 0; order: 0; position: relative; z-index: 1; }
-.scene__beam { order: 1; }
+.scene__cable { order: 1; }
 .scene__phone { order: 2; }
 
 .scene__pc .window { margin-top: 0; }
@@ -399,41 +399,17 @@ html[data-theme="dark"] .icon-btn .sun { display: none; }
 }
 .scene .card-preview__inner .brandline { font-size: 0.72rem; letter-spacing: 0.26em; }
 
-/* sync beam between the computer and the phone */
-.scene__beam {
-  flex: 0 0 44px;
-  align-self: center;
+/* USB-C cable connecting the laptop to the phone */
+.scene__cable {
+  flex: 0 0 60px;
+  align-self: flex-end;
   position: relative;
-  height: 44px;
-  z-index: 4;
+  height: 48px;
+  margin: 0 -12px 10px;
+  z-index: 5;
+  pointer-events: none;
 }
-.scene__beam::before {
-  content: "";
-  position: absolute;
-  left: 4px; right: 4px; top: 50%;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 65%, transparent), transparent);
-}
-.scene__beam i {
-  position: absolute;
-  top: 50%;
-  width: 6px; height: 6px;
-  margin-top: -3px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
-  animation: beam-fly 1.9s linear infinite;
-  opacity: 0;
-}
-.scene__beam i:nth-child(2) { animation-delay: 0.63s; }
-.scene__beam i:nth-child(3) { animation-delay: 1.26s; }
-@keyframes beam-fly {
-  0%   { left: 2px; opacity: 0; }
-  18%  { opacity: 1; }
-  82%  { opacity: 1; }
-  100% { left: calc(100% - 8px); opacity: 0; }
-}
+.scene__cable svg { width: 100%; height: 100%; display: block; overflow: visible; }
 
 /* card faces: cross-fading template layers */
 .cardface {
@@ -618,21 +594,60 @@ html[data-theme="dark"] .icon-btn .sun { display: none; }
     grid-template-columns: 1fr;
     justify-items: center;
   }
-  .scene__beam { flex: none; width: 46px; margin: 6px auto; transform: rotate(90deg); }
+  .scene__cable { width: 60px; height: 48px; margin: 4px auto; transform: rotate(90deg); }
   .scene__phone { width: 178px; }
   .scene .window__body { grid-template-columns: 1fr; }
   .scene .app-side__brand, .scene .app-device { display: none; }
   .scene .app-nav-item { padding: 8px 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .scene__beam i { animation: none; opacity: 0.7; }
-  .scene__beam i:nth-child(1) { left: 6px; }
-  .scene__beam i:nth-child(2) { left: calc(50% - 3px); }
-  .scene__beam i:nth-child(3) { left: calc(100% - 14px); }
   .scene__phone.hit .phone { animation: none; }
   .cardface { transition: none; }
   .swap.swapin .card-preview__inner,
   .swap.swapin .wallet__card-in { animation: none; }
+}
+
+/* ---------- Laptop frame around the app window ---------- */
+.laptop { position: relative; z-index: 1; }
+.laptop__screen {
+  position: relative;
+  padding: 11px 11px 13px;
+  border-radius: 16px 16px 7px 7px;
+  background: linear-gradient(160deg, #34383f, #0d0e11 62%);
+  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+.laptop__screen::before {
+  content: "";
+  position: absolute;
+  top: 5px; left: 50%;
+  transform: translateX(-50%);
+  width: 30%; height: 4px;
+  border-radius: 0 0 4px 4px;
+  background: #000;
+  opacity: 0.85;
+  z-index: 3;
+}
+.laptop .window {
+  border-radius: 7px;
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: none;
+}
+.laptop__base {
+  position: relative;
+  height: 15px;
+  margin: -2px -16px 0;
+  border-radius: 3px 3px 15px 15px;
+  background: linear-gradient(180deg, #3a3e45, #141619 70%);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.laptop__base::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 92px; height: 5px;
+  border-radius: 0 0 7px 7px;
+  background: #0b0c0e;
 }
 
 /* ---------- App window mockup ---------- */

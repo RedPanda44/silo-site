@@ -72,10 +72,12 @@
         </p>
       </div>
 
-      <div class="scene" role="img" aria-label="A computer running the Silo app next to an iPhone showing Apple Wallet. The card artwork changes live.">
+      <div class="scene" role="img" aria-label="A laptop running the Silo app connected by a cable to an iPhone showing Apple Wallet. The card artwork changes live.">
         <div class="scene__pc">
-      <!-- App window mockup -->
-      <div class="window reveal" role="img" aria-label="Screenshot of the Silo application window">
+      <!-- Laptop running the Silo app -->
+      <div class="laptop reveal">
+      <div class="laptop__screen">
+      <div class="window" role="img" aria-label="Screenshot of the Silo application window">
         <div class="window__bar">
           <div class="window__dots"><i></i><i></i><i></i></div>
           <div class="window__title">Silo — Wallet Studio</div>
@@ -129,6 +131,9 @@
           </div>
         </div>
       </div>
+      </div>
+      <div class="laptop__base" aria-hidden="true"></div>
+      </div>
         </div>
         <div class="scene__phone">
           <div class="phone">
@@ -170,7 +175,13 @@
             </div>
           </div>
         </div>
-        <div class="scene__beam" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene__cable" aria-hidden="true">
+          <svg viewBox="0 0 80 48" fill="none">
+            <path d="M9 21C22 44 58 44 71 21" stroke="var(--text-3)" stroke-width="3.4" stroke-linecap="round"/>
+            <rect x="3" y="13" width="13" height="10" rx="3" fill="var(--text-2)"/>
+            <rect x="64" y="13" width="13" height="10" rx="3" fill="var(--text-2)"/>
+          </svg>
+        </div>
       </div>
       </div>
     </div>
